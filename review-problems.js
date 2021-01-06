@@ -23,7 +23,9 @@ console.log(typeOfValue([4,5,6]))
 // isPositive(-4)       // false
 // isPositive(0)        // false
 /*function isPositive(x)*/
-
+function isPositive(num) {
+  return (num > 0);
+}
 
 
 
@@ -32,15 +34,22 @@ console.log(typeOfValue([4,5,6]))
 // getLowestNumber(1, 3, 2)         // 1
 // geLowestNumber(0, 1, "2")        // 0
 //getLowestNumber(1, 2, 'x')        // false
-
+function getLowestNumber(x, y, z) {
+  if (isNaN(x) || isNaN(y) || isNaN(z)) {
+    return false
+  } else {
+    return Math.min(x, y, z);
+  }
+}
 
 //TODO: Write a function named subtract that takes in two inputs. If both inputs provided are numeric, subtract will return the difference of both inputs. If one or both inputs is not numeric, subtract should return false.
- /* function subtract(num1, num2) {
-    if (!isNaN(num1) && !isNaN(num2) && typeof num1 !== 'boolean' && typeof num2 !== 'boolean') {
-      return (num1 - num2);
-    } else {
-      return false;
-    */
+function subtract(x, y) {
+  if (isNaN(parseFloat(x)) && isNaN(parseFloat(y))) {
+    return false;
+  } else {
+    return x - y;
+  }
+}
 /*console.log(subtract(2,1))
 console.log(subtract("2",1))
 console.log(subtract(true,false))*/
@@ -59,6 +68,14 @@ console.log(subtract(true,false))*/
 //divisibleByThree("8")       // false
 //divisibleByThree("red")     // false
 
+function divisibleByThree(input) {
+  if (input % 3 == 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
 console.log(divisibleByThree(3))
 console.log(divisibleByThree("6"))
 console.log(divisibleByThree("8"))
@@ -70,3 +87,10 @@ console.log(divisibleByThree("red"))
 //isSumLess100("7", 97)         // false
 //isSumLess100("puppy", 8)      // false
 //isSumLess100("50", "49")      // true
+function isSumLess100(x, y) {
+  if ((parseInt(x)) + (parseInt(y)) < 100) {
+    return true
+  } else {
+    return false
+  }
+}
